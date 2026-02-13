@@ -32,10 +32,158 @@ DefineAsset({
 			default: '#e1e3e5',
 		},
 	},
+	preview: 'preview.png',
+	attributes: {
+		provides: [
+			'Handheld',
+		],
+		requires: [
+			'!Hand_restricting_cover',
+		],
+	},
+	posePresets: [
+		{
+			name: 'Hug Normal',
+			bones: {
+				arm_l: 84,
+				arm_r: 85,
+				elbow_l: 53,
+				elbow_r: 85,
+			},
+			leftArm: {
+				fingers: 'spread',
+				rotation: 'forward',
+				position: 'front',
+			},
+			rightArm: {
+				fingers: 'fist',
+				rotation: 'down',
+				position: 'front_above_hair',
+			},
+		},
+		{
+			name: 'Hug tightly',
+			bones: {
+				arm_l: 85,
+				arm_r: 90,
+				elbow_l: 52,
+				elbow_r: 96,
+			},
+			leftArm: {
+				fingers: 'spread',
+				rotation: 'forward',
+				position: 'front',
+			},
+			rightArm: {
+				fingers: 'fist',
+				rotation: 'down',
+				position: 'front_above_hair',
+			},
+		},
+		{
+			name: 'Hug loosely',
+			bones: {
+				arm_l: 76,
+				arm_r: 79,
+				elbow_l: 67,
+				elbow_r: 88,
+			},
+			leftArm: {
+				fingers: 'spread',
+				rotation: 'forward',
+				position: 'front',
+			},
+			rightArm: {
+				fingers: 'fist',
+				rotation: 'down',
+				position: 'front_above_hair',
+			},
+		},
+	],
+	modules: {
+		handUsage_r: {
+			type: 'typed',
+			name: 'Name here',
+			variants: [
+				{
+					id: 'hug',
+					name: 'Hug',
+					default: true,
+					properties: {
+						poseLimits: {
+							options: [
+								{
+									bones: {
+										arm_l: 84,
+										arm_r: 85,
+										elbow_l: 53,
+										elbow_r: 85,
+									},
+									leftArm: {
+										fingers: 'spread',
+										rotation: 'forward',
+										position: 'front',
+									},
+									rightArm: {
+										fingers: 'fist',
+										rotation: 'down',
+										position: 'front_above_hair',
+									},
+								},
+								{
+									bones: {
+										arm_l: 85,
+										arm_r: 90,
+										elbow_l: 52,
+										elbow_r: 96,
+									},
+									leftArm: {
+										fingers: 'spread',
+										rotation: 'forward',
+										position: 'front',
+									},
+									rightArm: {
+										fingers: 'fist',
+										rotation: 'down',
+										position: 'front_above_hair',
+									},
+								},
+								{
+									bones: {
+										arm_l: 76,
+										arm_r: 79,
+										elbow_l: 67,
+										elbow_r: 88,
+									},
+									leftArm: {
+										fingers: 'spread',
+										rotation: 'forward',
+										position: 'front',
+									},
+									rightArm: {
+										fingers: 'fist',
+										rotation: 'down',
+										position: 'front_above_hair',
+									},
+								},
+							],
+						},
+					},
+				},
+				{
+					id: 'right',
+					name: 'Right hand',
+				},
+				{
+					id: 'left',
+					name: 'Left hand',
+				},
+			],
+		},
+	},
 	//roomDeployment: {
 	//	autoDeployRelativePosition: [330, -150, 0],
 	//},
-	preview: undefined,
 	ownership:
         {
         	responsibleContributor: 'smallelise <elise21dev@proton.me>',
@@ -48,7 +196,7 @@ DefineAsset({
         	licensing:
                 [
                 	{
-                		part: 'Blahaj',
+                		part: 'Shark-Plush',
                 		source: 'Self-Made',
                 		copyrightHolder: 'smallelise',
                 		editedBy: 'smallelise',

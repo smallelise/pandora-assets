@@ -19,7 +19,7 @@
 			"variables": [],
 			"imageMap": {
 				"": [
-					"Shark_Plush_posed-1.png"
+					"body_lower.png"
 				]
 			}
 		},
@@ -36,12 +36,22 @@
 				{
 					"name": "Body",
 					"colorizationKey": "body"
+				},
+				{
+					"name": "Details",
+					"colorizationKey": "body"
+				},
+				{
+					"name": "Details back",
+					"colorizationKey": "body"
 				}
 			],
 			"variables": [],
 			"imageMap": {
 				"": [
-					"Shark_Plush_posed-2.png"
+					"body_upper.png",
+					"details_body.png",
+					"details_back.png"
 				]
 			}
 		},
@@ -62,13 +72,18 @@
 				{
 					"name": "Lower Fin",
 					"colorizationKey": "body"
+				},
+				{
+					"name": "Outline",
+					"colorizationKey": "body"
 				}
 			],
 			"variables": [],
 			"imageMap": {
 				"": [
-					"Shark_Plush_posed-4.png",
-					"Shark_Plush_posed-3.png"
+					"upper_fin.png",
+					"lower_fin.png",
+					"details_fin.png"
 				]
 			}
 		},
@@ -94,8 +109,8 @@
 			"variables": [],
 			"imageMap": {
 				"": [
-					"Shark_Plush_posed-6.png",
-					"Shark_Plush_posed-5.png"
+					"cavity.png",
+					"teeth.png"
 				]
 			}
 		},
@@ -125,9 +140,9 @@
 			"variables": [],
 			"imageMap": {
 				"": [
-					"Shark_Plush_posed-7.png",
-					"Shark_Plush_posed-8.png",
-					"Shark_Plush_posed-9.png"
+					"sciera.png",
+					"iris.png",
+					"pupil.png"
 				]
 			}
 		},
@@ -142,13 +157,14 @@
 			"automeshTemplate": "aboveFrontHair",
 			"graphicalLayers": [
 				{
-					"name": "Details"
+					"name": "Details",
+					"colorizationKey": "body"
 				}
 			],
 			"variables": [],
 			"imageMap": {
 				"": [
-					"Shark_Plush_posed-10.png"
+					"details.png"
 				]
 			}
 		}
