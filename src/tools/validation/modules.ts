@@ -1,16 +1,9 @@
-import {
-	AssertNever,
-	AssetBaseDefinition,
-	AssetModuleDefinition,
-	AssetSizeMapping,
-	AssetType,
-	LIMIT_ITEM_MODULE_TEXT_LENGTH,
-	Logger,
-} from 'pandora-common';
+import { AssertNever, AssetBaseDefinition, AssetModuleDefinition, AssetSizeMapping, AssetType, LIMIT_ITEM_MODULE_TEXT_LENGTH, Logger } from 'pandora-common';
 import type { IModuleConfigLockSlot } from 'pandora-common/assets/modules/lockSlot';
 import type { IModuleConfigStorage } from 'pandora-common/assets/modules/storage';
 import type { ModuleConfigText } from 'pandora-common/assets/modules/text';
 import type { IModuleConfigTyped } from 'pandora-common/assets/modules/typed';
+import { IModuleConfigKey } from 'pandora-common/assets/modules/key';
 
 interface ModuleValidationMetadata<TProperties, TPropertiesValidationMetadata> {
 	baseAssetDefinition: AssetBaseDefinition<AssetType, AssetRepoExtraArgs>;
@@ -43,6 +36,8 @@ export function ValidateModule<TProperties, TStaticData, TPropertiesValidationMe
 		ValidateStorageModule(logger, context, metadata, moduleDefinition);
 	} else if (moduleDefinition.type === 'text') {
 		ValidateTextModule(logger, context, metadata, moduleDefinition);
+	} else if (moduleDefinition.type === 'key') {
+		ValidateKeyModule(logger, context, metadata, moduleDefinition);
 	} else {
 		AssertNever(moduleDefinition);
 	}
@@ -140,5 +135,16 @@ export function ValidateTextModule<TProperties, TStaticData, TPropertiesValidati
 		if (moduleDefinition.maxLength > LIMIT_ITEM_MODULE_TEXT_LENGTH) {
 			logger.warning(`Invalid module config: ${context}.maxLength: Length will be limited to platform maximum ${LIMIT_ITEM_MODULE_TEXT_LENGTH}`);
 		}
+	}
+}
+
+export function ValidateKeyModule<TProperties, TStaticData, TPropertiesValidationMetadata>(
+	logger: Logger,
+	context: string,
+	_metadata: ModuleValidationMetadata<TProperties, TPropertiesValidationMetadata>,
+	moduleDefinition: IModuleConfigKey<TProperties, TStaticData>,
+): void {
+	if (moduleDefinition.shapePinning === undefined) {
+		logger.info(`Info module config: ${context}.maxLength:, Not set any limits what Shape the keys can have.`);
 	}
 }
