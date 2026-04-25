@@ -4,8 +4,9 @@ DefineAsset({
 	assetPreferenceDefault: 'maybe',
 	modules: {
 		key: {
-			name: 'Key',
-			type: 'text',
+			name: 'Simple Key',
+			type: 'key',
+			keyShape: 1,
 		},
 	},
 	chat: {

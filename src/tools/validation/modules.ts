@@ -144,7 +144,7 @@ export function ValidateKeyModule<TProperties, TStaticData, TPropertiesValidatio
 	_metadata: ModuleValidationMetadata<TProperties, TPropertiesValidationMetadata>,
 	moduleDefinition: IModuleConfigKey<TProperties, TStaticData>,
 ): void {
-	if (moduleDefinition.shapePinning === undefined) {
+	if (moduleDefinition.keyShape === undefined) {
 		logger.info(`Info module config: ${context}.maxLength:, Not set any limits what Shape the keys can have.`);
 	}
 }
