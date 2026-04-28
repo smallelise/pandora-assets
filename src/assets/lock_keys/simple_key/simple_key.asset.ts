@@ -6,7 +6,7 @@ DefineAsset({
 		key: {
 			name: 'Simple Key',
 			type: 'key',
-			keyShape: 1,
+			shapePinning: [],
 		},
 	},
 	chat: {
